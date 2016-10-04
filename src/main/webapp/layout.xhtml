@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title><ui:insert name="title">Название по умолчанию</ui:insert></title>
+    <style type="text/css">
+        body {
+            font: 10pt Arial, Helvetica, sans-serif; /* Шрифт на веб-странице */
+            background: #e1dfb9; /* Цвет фона */
+        }
+
+        h2 {
+            font-size: 1.1em; /* Размер шрифта */
+            color: #800040; /* Цвет текста */
+            margin-top: 0; /* Отступ сверху */
+        }
+
+        #container {
+            width: 1024px; /* Ширина слоя */
+            margin: 0 auto; /* Выравнивание по центру */
+            background: #f0f0f0; /* Цвет фона левой колонки */
+        }
+
+        #header {
+            font-size: 2.2em; /* Размер текста */
+            text-align: center; /* Выравнивание по центру */
+            padding: 5px; /* Отступы вокруг текста */
+            background: #8fa09b; /* Цвет фона шапки */
+            color: #ffe; /* Цвет текста */
+        }
+
+        #sidebar {
+            margin-top: 10px;
+            width: 200px; /* Ширина слоя */
+            padding: 0 10px; /* Отступы вокруг текста */
+            float: left; /* Обтекание по правому краю */
+        }
+
+        #content {
+            margin-left: 200px; /* Отступ слева */
+            padding: 10px; /* Поля вокруг текста */
+            background: #fff; /* Цвет фона правой колонки */
+            height: 600px;
+        }
+
+        #footer {
+            background: #8fa09b; /* Цвет фона подвала */
+            color: #fff; /* Цвет текста */
+            padding: 5px; /* Отступы вокруг текста */
+            clear: left; /* Отменяем действие float */
+        }
+
+        .ui-dashboard-column {
+            width: 260px;
+        }
+        .ui-panel, div.ui-state-hover {
+            margin: 10px;
+            /*width: 200px;*/
+        }
+    </style>
+</h:head>
+<h:body>
+    <h:messages id="errors" infoStyle="color:blue" warnStyle="color:orange" errorStyle="color:red"/>
+
+    <div id="container">
+        <div id="header">
+            <ui:insert name="title">Заголовок</ui:insert>
+        </div>
+        <div id="sidebar">
+            <ui:insert name="menu">Меню</ui:insert>
+        </div>
+        <div id="content">
+            <ui:insert name="content">Содержимое</ui:insert>
+        </div>
+        <div id="footer">
+            <h:outputText value="Test schedule EE7"/>
+        </div>
+    </div>
+
+</h:body>
+</html>
