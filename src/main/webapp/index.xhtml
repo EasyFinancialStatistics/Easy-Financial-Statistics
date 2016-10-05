@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://java.sun.com/jsf/core"
         >
 <ui:composition template="layout.xhtml">
     <ui:define name="title">
@@ -132,39 +132,85 @@
         </h:form>
     </ui:define>
     <ui:define name="content">
-        <h:form>
-            <p:growl id="msgs" showDetail="true"/>
-            <p:dashboard id="board" model="#{dashboardView.model}">
+        <div id="addForms">
+            <h:form>
+                <p:growl id="msgs" showDetail="true"/>
+                <p:dashboard id="board" model="#{dashboardView.model}">
 
-                <p:ajax event="reorder" listener="#{dashboardView.handleReorder}" update="msgs"/>
+                    <p:ajax event="reorder" listener="#{dashboardView.handleReorder}" update="msgs"/>
 
-                <p:panel id="sports" header="Sports">
-                    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
-                        <h:outputText value="Basic: " />
-                        <h:inputText />
-                        <h:outputText value="Ajax: " />
+                    <p:panel id="income" header="Income">
+                        <h:form>
+                            <h:panelGrid columns="2" style="margin-bottom:10px;" cellpadding="5">
+                                <h:outputText value="Amount: "/>
+                                <p:inputText/>
+                                <h:outputText value="Begin date: "/>
+                                <p:calendar id="incomeBeginDate" mindate="4/1/14" maxdate="7/1/14"/>
+                                <h:outputText value="End date: "/>
+                                <p:calendar id="incomeEndDate" mindate="4/1/14" maxdate="7/1/14"/>
+                                <h:outputText value="Type: "/>
+                                <h:selectOneMenu>
+                                    <f:selectItem itemValue="type 1"/>
+                                </h:selectOneMenu>
+                            </h:panelGrid>
+                            <h:commandButton value="Enter"/>
+                        </h:form>
+                    </p:panel>
 
-                    </h:panelGrid>
-                </p:panel>
+                    <p:panel id="outcome" header="Outcome">
+                        <h:form>
+                            <h:panelGrid columns="2" style="margin-bottom:10px;" cellpadding="5">
+                                <h:outputText value="Amount: "/>
+                                <p:inputText/>
+                                <h:outputText value="Begin date: "/>
+                                <p:calendar id="outcomeBeginDate" mindate="4/1/14" maxdate="7/1/14"/>
+                                <h:outputText value="End date: "/>
+                                <p:calendar id="outcomeEndDate" mindate="4/1/14" maxdate="7/1/14"/>
+                                <h:outputText value="Type: "/>
+                                <h:selectOneMenu>
+                                    <f:selectItem itemValue="type 1"/>
+                                </h:selectOneMenu>
+                            </h:panelGrid>
+                            <h:commandButton value="Enter"/>
+                        </h:form>
+                    </p:panel>
 
-                <p:panel id="finance" header="Finance">
-                    <h:outputText value="Finance Content"/>
-                </p:panel>
+                    <p:panel id="credit" header="Credit">
+                        <h:form>
+                            <h:panelGrid columns="2" style="margin-bottom:10px;" cellpadding="5">
+                                <h:outputText value="Amount: "/>
+                                <p:inputText/>
+                                <h:outputText value="Begin date: "/>
+                                <p:calendar id="creditBeginDate" mindate="4/1/14" maxdate="7/1/14"/>
+                                <h:outputText value="End date: "/>
+                                <p:calendar id="creditEndDate" mindate="4/1/14" maxdate="7/1/14"/>
+                                <h:outputText value="Percent: "/>
+                                <p:inputText/>
+                            </h:panelGrid>
+                            <h:commandButton value="Enter"/>
+                        </h:form>
+                    </p:panel>
 
-                <p:panel id="lifestyle" header="Lifestyle">
-                    <h:outputText value="Lifestyle Content"/>
-                </p:panel>
+                    <p:panel id="goal" header="Goal">
+                        <h:form>
+                            <h:panelGrid columns="2" style="margin-bottom:10px;" cellpadding="5">
+                                <h:outputText value="Name: "/>
+                                <p:inputText/>
+                                <h:outputText value="Price: "/>
+                                <p:inputText/>
+                                <h:outputText value="End date: "/>
+                                <p:calendar id="goalEndDate" mindate="4/1/14" maxdate="7/1/14"/>
+                            </h:panelGrid>
+                            <h:commandButton value="Enter"/>
+                        </h:form>
+                    </p:panel>
 
-                <p:panel id="weather" header="Weather">
-                    <h:outputText value="Weather Content"/>
-                </p:panel>
-
-                <p:panel id="politics" header="Politics">
-                    <h:outputText value="Politics Content"/>
-                </p:panel>
-            </p:dashboard>
-        </h:form>
-
+                    <p:panel id="politics" header="Politics">
+                        <h:outputText value="Politics Content"/>
+                    </p:panel>
+                </p:dashboard>
+            </h:form>
+        </div>
     </ui:define>
 </ui:composition>
 </html>
