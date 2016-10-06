@@ -1,4 +1,3 @@
-package Entity;
 
 import javax.persistence.*;
 import java.util.Date;
