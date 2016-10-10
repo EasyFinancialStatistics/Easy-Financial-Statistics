@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Changes {
+public class Changes implements Table{
     @GeneratedValue
     @Id
     private int id;

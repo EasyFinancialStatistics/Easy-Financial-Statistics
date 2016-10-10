@@ -3,7 +3,7 @@ package database.entity;
 import javax.persistence.*;
 
 @Entity
-public class Consumption {
+public class Consumption implements Table{
     @GeneratedValue
     @Id
     private int id;

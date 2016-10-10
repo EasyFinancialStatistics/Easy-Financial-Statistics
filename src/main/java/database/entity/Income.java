@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 
 @Entity
-public class Income {
+public class Income implements Table{
     @GeneratedValue
     @Id
     private int id;

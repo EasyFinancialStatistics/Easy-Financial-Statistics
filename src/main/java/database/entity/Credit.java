@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 
 @Entity
-public class Credit {
+public class Credit implements Table{
     @GeneratedValue
     @Id
     private int id;

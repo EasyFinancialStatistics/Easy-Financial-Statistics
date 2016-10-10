@@ -4,7 +4,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class User {
+public class User implements Table{
     @GeneratedValue @Id
     private int id;
     private String login;

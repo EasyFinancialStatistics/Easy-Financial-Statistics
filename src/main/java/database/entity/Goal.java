@@ -5,7 +5,7 @@ import java.util.Date;
 
 
 @Entity
-public class Goal {
+public class Goal implements Table{
     @GeneratedValue
     @Id
     private int id;
